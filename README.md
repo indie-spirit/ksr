@@ -23,8 +23,7 @@ Candidates are allowed to solve problems **ONLY using:**
 ## **Title:** Minimum Corridor Collapse Operations  
 ## **Description:**  
 A corridor has `N` chambers in a line, each with a stability value.  
-You may perform an operation:  
-Choose **any contiguous subarray** whose **sum is negative**, and collapse it entirely (remove it).  
+You may perform an operation:us subarray** whose **sum is negative**, and collapse it entirely (remove it).  
 After collapsing, the corridor closes the gap.
 
 Goal: Perform the **minimum number of collapses** so that **no negative-sum contiguous subarray exists**.
