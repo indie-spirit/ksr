@@ -20,3 +20,4 @@ def smallest_valid(s):
             return "-1"
     return "".join(s)
 print(smallest_valid(s))  
+

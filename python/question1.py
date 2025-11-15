@@ -1,11 +1,11 @@
 N = 7
-arr = [2, -5, 3, -2, 4, -1, 6]
+array = [2, -5, 3, -2, 4, -1, 6]
 import heapq
 def min_collapses(arr):
     prefix = 0
     pq = []     
     operations = 0
-    for x in arr:
+    for x in array:
         prefix += x
         heapq.heappush(pq, -x)
         while prefix < 0:
@@ -13,4 +13,4 @@ def min_collapses(arr):
             prefix -= largest
             operations += 1
     return operations
-print(min_collapses(arr))
+print(min_collapses(array))
