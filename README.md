@@ -71,10 +71,9 @@ Goal: After some moves:
 3 4
 ```
 
-## **Sample Output:**  
-```
+## Sample 0utput:**
+'''
 3
-```
 
 ---
 
