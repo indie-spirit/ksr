@@ -1,0 +1,31 @@
+import sys,collections
+def solve():
+    r,c,e=map(int,sys.stdin.readline().split())
+    g=[list(sys.stdin.readline().strip()) for _ in range(r)]
+    T=[]
+    for i in range(r):
+        for j in range(c):
+            if g[i][j]=='S':S=(i,j)
+            if g[i][j]=='X':X=(i,j)
+            if g[i][j]=='T':T.append((i,j))
+    best=[[-1]*c for _ in range(r)]
+    q=collections.deque([(S[0],S[1],e)])
+    steps=0
+    while q:
+        for _ in range(len(q)):
+            i,j,e=q.popleft()
+            if e<0 or e<=best[i][j]: continue
+            best[i][j]=e
+            if (i,j)==X:
+                print(steps); return
+            for di,dj in [(1,0),(-1,0),(0,1),(0,-1)]:
+                ni,nj=i+di,j+dj
+                if 0<=ni<r and 0<=nj<c and g[ni][nj] != '#':
+                    cost=1+(int(g[ni][nj]) if g[ni][nj].isdigit() else 0)
+                    q.append((ni,nj,e-cost))
+            if g[i][j]=='T':
+                for ti,tj in T:
+                    if (ti,tj)!=(i,j):
+                        q.append((ti,tj,e))
+        steps+=1
+    print(-1)
